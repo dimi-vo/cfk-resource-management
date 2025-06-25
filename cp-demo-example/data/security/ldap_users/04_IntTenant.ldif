@@ -1,0 +1,6 @@
+dn: cn=IntTenant,ou=groups,{{ LDAP_BASE_DN }}
+objectClass: top
+objectClass: posixGroup
+cn: IntTenant
+gidNumber: 5002
+

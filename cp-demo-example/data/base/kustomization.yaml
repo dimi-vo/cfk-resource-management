@@ -1,0 +1,3 @@
+resources:
+  - topic-resources.yaml
+  - role-bindings.yaml

@@ -1,0 +1,10 @@
+apiVersion: platform.confluent.io/v1beta1
+kind: ConfluentRolebinding
+metadata:
+  name: tenant-binding
+spec:
+  role: ResourceOwner
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+

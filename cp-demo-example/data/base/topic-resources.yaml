@@ -1,0 +1,12 @@
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: demo-topic-1
+spec:
+  replicas: 1
+  partitionCount: 2
+  configs:
+    message.timestamp.type: "LogAppendTime"
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent

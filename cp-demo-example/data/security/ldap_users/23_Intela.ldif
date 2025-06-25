@@ -1,0 +1,15 @@
+dn: cn=intela,ou=users,{{ LDAP_BASE_DN }}
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: intela
+sn: Intela
+givenName: Intela
+cn: intela
+displayName: Intela the Integrator
+uidNumber: 10023
+gidNumber: 5002
+userPassword: intela-secret
+gecos: intela
+loginShell: /bin/bash
+homeDirectory: /home/intela

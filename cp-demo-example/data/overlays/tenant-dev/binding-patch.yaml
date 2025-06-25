@@ -1,0 +1,13 @@
+apiVersion: platform.confluent.io/v1beta1
+kind: ConfluentRolebinding
+metadata:
+  name: tenant-binding
+  namespace: confluent
+spec:
+  principal:
+    type: group
+    name: DevTenant
+  resourcePatterns:
+    - name: dev-
+      patternType: PREFIXED
+      resourceType: Topic

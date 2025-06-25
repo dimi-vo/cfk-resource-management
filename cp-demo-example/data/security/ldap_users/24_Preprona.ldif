@@ -1,0 +1,15 @@
+dn: cn=preprona,ou=users,{{ LDAP_BASE_DN }}
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: preprona
+sn: Preprona
+givenName: Preprona
+cn: preprona
+displayName: Expecto Preprona
+uidNumber: 10024
+gidNumber: 5003
+userPassword: preprona-secret
+gecos: preprona
+loginShell: /bin/bash
+homeDirectory: /home/preprona

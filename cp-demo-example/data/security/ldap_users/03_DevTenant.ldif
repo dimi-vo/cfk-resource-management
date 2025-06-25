@@ -1,0 +1,6 @@
+dn: cn=DevTenant,ou=groups,{{ LDAP_BASE_DN }}
+objectClass: top
+objectClass: posixGroup
+cn: DevTenant
+gidNumber: 5001
+

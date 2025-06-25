@@ -1,0 +1,201 @@
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: WIKIPEDIABOT
+  namespace: confluent
+spec:
+  replicas: 2
+  partitionCount: 2
+  configs:
+      confluent.value.schema.validation: "false"
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: WIKIPEDIANOBOT
+  namespace: confluent
+spec:
+  replicas: 2
+  partitionCount: 2
+  configs:
+      confluent.value.schema.validation: "false"
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: WIKIPEDIA_COUNT_GT_1
+  namespace: confluent
+spec:
+  replicas: 2
+  partitionCount: 2
+  configs:
+      confluent.value.schema.validation: "false"
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: confluent-audit-log-events
+  namespace: confluent
+spec:
+  replicas: 2
+  partitionCount: 12
+  configs:
+      message.timestamp.type: "CreateTime"
+      retention.bytes: "-1"
+      retention.ms: "7776000000"
+      segment.ms: "14400000"
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: connect-configs
+  namespace: confluent
+spec:
+  replicas: 2
+  partitionCount: 1
+  configs:
+      cleanup.policy: "compact"
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: connect-offsets
+  namespace: confluent
+spec:
+  replicas: 2
+  partitionCount: 25
+  configs:
+      cleanup.policy: "compact"
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: connect-statuses
+  namespace: confluent
+spec:
+  replicas: 2
+  partitionCount: 5
+  configs:
+      cleanup.policy: "compact"
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: ksql-clusterksql_processing_log
+  namespace: confluent
+spec:
+  replicas: 2
+  partitionCount: 1
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: users
+  namespace: confluent
+spec:
+  replicas: 2
+  partitionCount: 2
+  configs:
+      confluent.value.schema.validation: "true"
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: wikipedia-activity-monitor-KSTREAM-AGGREGATE-STATE-STORE-0000000003-changelog
+  namespace: confluent
+spec:
+  replicas: 2
+  partitionCount: 2
+  configs:
+      cleanup.policy: "compact"
+      message.timestamp.type: "CreateTime"
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: wikipedia-activity-monitor-KSTREAM-AGGREGATE-STATE-STORE-0000000003-repartition
+  namespace: confluent
+spec:
+  replicas: 2
+  partitionCount: 2
+  configs:
+      cleanup.policy: "delete"
+      message.timestamp.type: "CreateTime"
+      retention.ms: "-1"
+      segment.bytes: "52428800"
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: wikipedia.failed
+  namespace: confluent
+spec:
+  replicas: 2
+  partitionCount: 2
+  configs:
+      confluent.value.schema.validation: "false"
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: wikipedia.parsed
+  namespace: confluent
+spec:
+  replicas: 2
+  partitionCount: 2
+  configs:
+      confluent.value.schema.validation: "true"
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: wikipedia.parsed.count-by-domain
+  namespace: confluent
+spec:
+  replicas: 2
+  partitionCount: 2
+  configs:
+      confluent.value.schema.validation: "false"
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+---

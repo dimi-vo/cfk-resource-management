@@ -1,0 +1,12 @@
+apiVersion: platform.confluent.io/v1beta1
+kind: ConfluentRolebinding
+metadata:
+  name: tenant-binding
+spec:
+  principal:
+    type: group
+    name: PreprodTenant
+  resourcePatterns:
+    - name: preprod-
+      patternType: PREFIXED
+      resourceType: Topic

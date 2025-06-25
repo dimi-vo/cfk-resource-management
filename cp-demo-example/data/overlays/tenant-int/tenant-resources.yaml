@@ -1,0 +1,31 @@
+apiVersion: platform.confluent.io/v1beta1
+kind: ConfluentRolebinding
+metadata:
+  name: int-tenant-binding
+  namespace: confluent-int
+spec:
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+  principal:
+    name: IntTenant
+    type: group
+  resourcePatterns:
+  - name: int-
+    patternType: PREFIXED
+    resourceType: Topic
+  role: ResourceOwner
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: int-demo-topic-1
+  namespace: confluent-int
+spec:
+  configs:
+    message.timestamp.type: LogAppendTime
+  kafkaRestClassRef:
+    name: cp-demo-access
+    namespace: confluent
+  partitionCount: 2
+  replicas: 1
