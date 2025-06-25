@@ -1,7 +1,6 @@
 # Goal
 
-Using [cp-demo](https://docs.confluent.io/platform/current/tutorials/cp-demo/docs/overview.html) we will create a topic,
-schema and give permissions to an user.
+Using [cp-demo](https://docs.confluent.io/platform/current/tutorials/cp-demo/docs/overview.html) we will deploy a cluster in Docker. Then we will create a k8s cluster using kind. There we will deploy the CFK operator and use that to manage the resources in the CP cluster. We will create a topic, schemas and role-bindings.
 
 ## Diagram
 

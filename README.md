@@ -1,11 +1,11 @@
 
 # Goal
 
-CfK allows us to control resources outside kubernetes. It would be useful to use the capabilities of CfK to create and delete topics and RBAC in a CP outside CfK.
+Use CFK to manage resources on a cluster that is deployed outside of the k8s were CFK is.
 
 ## [cp-demo-example](cp-demo-example/)
 
-Using [cp-demo](https://docs.confluent.io/platform/current/tutorials/cp-demo/docs/overview.html) we will create a topic, schema and give permissions to an user.
+A CP cluster will be deployed in Docker.
 
 ## References
 
